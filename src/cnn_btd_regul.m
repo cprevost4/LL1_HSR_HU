@@ -1,4 +1,11 @@
-function [ZS,ZC,ZCbar,cost] = cnn_btd_regul(Z,HSI,MSI,B_hat,C_hat,Cbar_hat,P1,P2,L,R,nIter,innerIter,rho,lambda)
+function [ZS,ZC,ZCbar,cost] = cnn_btd_regul(Z,HSI,MSI,B_hat,C_hat,Cbar_hat,P1,P2,L,R,nIter,innerIter,rho,lambda,options)
+
+if ~exist('options','var')
+    options = struct();
+end
+if ~isfield(options,'strategy') || isempty(options.strategy)
+    options.strategy = true;
+end
 
 ZS = zeros(size(Z,1)*size(Z,2),R); US = ZS;
 ZC = zeros(size(C_hat)); UC = ZC;
@@ -62,8 +69,10 @@ while i<nIter %&& cost(i)>eps && diff_cost(i)>eps
         n = n+1;
         H5 = H5_tilde + rho*(ZC+UC);
         C_hat = (pinv(H2)*H5')';
-        for r=1:R
-            C_hat(:,r) = C_hat(:,r)/norm(C_hat(:,r));
+        if options.strategy
+            for r=1:R
+                C_hat(:,r) = C_hat(:,r)/norm(C_hat(:,r));
+            end
         end
         ZC = max(0,C_hat-UC);
         UC = UC + (ZC - C_hat);
@@ -79,8 +88,10 @@ while i<nIter %&& cost(i)>eps && diff_cost(i)>eps
         n = n+1;
         H5 = H5_tilde + rho*(ZCbar+UCbar);
         Cbar_hat = (pinv(H2)*H5')';
-        for r=1:R
-            Cbar_hat(:,r) = Cbar_hat(:,r)/norm(Cbar_hat(:,r));
+        if options.strategy
+            for r=1:R
+                Cbar_hat(:,r) = Cbar_hat(:,r)/norm(Cbar_hat(:,r));
+            end
         end
         ZCbar = max(0,Cbar_hat-UCbar);
         UCbar = UCbar + (ZCbar - Cbar_hat);
