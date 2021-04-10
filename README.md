@@ -12,20 +12,8 @@ Incoming
 
 ## Acknowledgements
 
-CP-based STEREO and Blind-STEREO are courtesy of C. Kanatsoulis. If you want to use this software for publication, please cite the following papers:
+The baseline algorithms used in the manuscript are courtesy of their respective authors.
 
-```
-@article{kanatsoulis2018hyperspectral,
-  title={Hyperspectral super-resolution: A coupled tensor factorization approach},
-  author={Kanatsoulis, Charilaos I and Fu, Xiao and Sidiropoulos, Nicholas D and Ma, Wing-Kin},
-  journal={IEEE Transactions on Signal Processing},
-  volume={66},
-  number={24},
-  pages={6503--6517},
-  year={2018},
-  publisher={IEEE}
-}
-``` 
 
 ## Content
 
@@ -53,12 +41,9 @@ In order to run the demo file and reproduce the figures, you will need to:
  A demo with minimal requirements is available. To proceed, please run the ```demo.m``` file.
  
   ### Load data
-
-  ### Perform fusion
   
-  ### Perform blind unmixing
-  
-
+  The synthetic datasets are available in the ```\data``` folders. 
+  The Ivanpah Playa and Lake Tahoe datasets are available online https://landsat.gsfc.nasa.gov.
   
   ## Reproduce figures from the paper
   
@@ -66,13 +51,13 @@ In order to run the demo file and reproduce the figures, you will need to:
 
 | Number | Content                                        |
 |--------|------------------------------------------------|
-| 1      | produces Figure 1 from CAMSAP paper            |
-| 2      | produces Fig. 1 and 4 from preprint            |
-| 3      | produces Fig. 2 and 5 from preprint            |
-| 4      | produces Fig. 3 from preprint                  |
-| 5      | produces Fig. 6 from preprint                  |
-| 6      | produces Fig. 8, 9 and 10 from preprint        |
-| 7      | produces Fig. 11 and 12 from preprint          |
+| 1      | Image fusion - Lake Tahoe dataset              |
+| 2      | Image fusion - Ivanpah Playa dataset           |
+| 3      | Image fusion - Indian Pines dataset            |
+| 4      | Unmixing - field-like synthetic dataset        |
+| 5      | Unmixing - synthetic dataset, non-id. NMF      |
+| 6      | Unmixing - Lake Tahoe dataset                  |
+| 7      | Unmixing - Ivanpah Playa dataset               |
 
 
 
