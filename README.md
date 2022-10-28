@@ -4,10 +4,27 @@ This repository contains the software for joint HSR and unmixing using LL1 decom
 Copyright (c) 2021 Clémence Prévost, Ricardo Borsoi, Konstantin Usevich, José Bermudez, David Brie, Cédric Richard <br>
 Contact: ```clemence.prevost@univ-lorraine.fr```
 
-This MATLAB software reproduces the results from the following papers:
+This MATLAB software reproduces the results from the following paper:
 
 ```
-Incoming
+@article{prevost:hal-03158076,
+  TITLE = {{Hyperspectral super-resolution accounting for spectral variability: coupled tensor LL1-based recovery and blind unmixing of the unknown super-resolution image}},
+  AUTHOR = {Pr{\'e}vost, Cl{\'e}mence and Borsoi, Ricardo A and Usevich, Konstantin and Brie, David and Bermudez, Jos{\'e} C. M. and Richard, C{\'e}dric},
+  URL = {https://hal.archives-ouvertes.fr/hal-03158076},
+  JOURNAL = {{SIAM Journal on Imaging Sciences}},
+  HAL_LOCAL_REFERENCE = {BioSiS},
+  PUBLISHER = {{Society for Industrial and Applied Mathematics}},
+  VOLUME = {15},
+  NUMBER = {1},
+  PAGES = {110-138},
+  YEAR = {2022},
+  MONTH = Jan,
+  DOI = {10.1137/21M1409354},
+  KEYWORDS = {Hyperspectral super-resolution ; spectral variability ; hyperspectral unmixing ; image fusion ; tensor decompositions},
+  PDF = {https://hal.archives-ouvertes.fr/hal-03158076v2/file/LL1_SIAM_R2.pdf},
+  HAL_ID = {hal-03158076},
+  HAL_VERSION = {v2},
+}
 ```
 
 ## Acknowledgements
